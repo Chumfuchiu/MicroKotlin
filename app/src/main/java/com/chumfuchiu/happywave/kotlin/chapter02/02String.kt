@@ -34,5 +34,5 @@ fun main(args: Array<String>) {
        \\ \\ 
        ${aInt + bInt} //这个注释符号在这里不生效
     """
-    println(originString)
+    println(originString)//输出三个引号之间的内容，其中模板字符串依旧生效
 }

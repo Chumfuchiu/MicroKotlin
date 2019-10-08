@@ -6,8 +6,8 @@ package com.chumfuchiu.happywave.kotlin.chapter02
  * 1.Kotlin不支持八进制
  * 2.Kotlin中的数据类型是 “Java基本数据类型及其装箱类型”的结合体，例如Kotlin的Int代表的就是Java的
  *   int和Integer，具体代表哪种由编译器去决定
- * 3.Kotlin中定义常量用val，表示只读相当于Java中被final修饰
- *             定义变量用var，表示该值可以被修改
+ * 3.Kotlin中定义"常量"用val，表示只读（相对kotlin而言是不可变的，但是它并不是编译期常量，编译器常量需要const修饰）
+ *           定义变量用var，表示该值可以被修改
  */
 
 //Byte一般不用来表示数据，而是用作比特流
