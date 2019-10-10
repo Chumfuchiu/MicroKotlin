@@ -1,27 +1,29 @@
 package com.chumfuchiu.happywave.kotlin.chapter04
 
 /**
- * lambada表达式：
+ * 【kotlin中的lambada表达式】
  * lambda表达式是匿名函数的一种写法，并不是说匿名函数就是lambda表达式
  * 而在不同语言中的lambda表达式略有区别，但基本形式都是一样的：
  * prefix args separator expression
  * 即前缀（可选）+参数+分隔符+表达式
+ *
  * 在kotlin中lambda的写法为 { args -> {expression}}
  *
  * 在kotlin中，默认支持的lambda表达式最多支持22个入参
  */
 
 fun main(args: Array<String>) {
-    println(sum(1, 1))
-    println(sum1(2, 2))
+    println(sumLambda(1, 1))
+    println(sumLambda1(2, 2))
     printLambda()
+//    println(sumLambda is (Int,Int) -> Int)//报错了，cannot check for instance of erase type (Int,Int) -> Int
+    println(sumLambda1 is (Int, Int) -> Int)//判断一个lambda表达式的类型，todo sumLambda好像不能判断
     visitArray(args)
-    println(sum1 is (Int,Int)->Int)//判断一个lambda表达式的类型，todo sum好像不能判断
 }
 
 //用lambda表达式写一个带有入参及返回值的函数,lambda表达式的最后一行为lambda表达式的返回值
 //（Int,Int）-> Int
-var sum = { i1: Int, i2: Int ->
+var sumLambda = { i1: Int, i2: Int ->
     {
         println("${i1} + ${i2} = ${i1 + i2}")
         i1 + i2
@@ -30,8 +32,10 @@ var sum = { i1: Int, i2: Int ->
 
 //如果表达式只有一行语句 可以省略表达式外层的大括号
 //(Int,Int)->Int
-var sum1 = { i1: Int, i2: Int ->
-    i1 + i2
+var sumLambda1 = { i1: Int, i2: Int ->
+//    {
+        i1 + i2
+//    }
 }
 
 //如果没有参数，那么参数和分隔符都可以省略
@@ -62,11 +66,11 @@ fun visitArray(args: Array<String>) {
     args.forEach { println(it) }
     //5.当入参、返回值与形参一致的函数可以使用函数引用的方式作为实参传入
     //todo
-    args.forEach (::println)
+    args.forEach(::println)
 
-    //利用注解标志一个循环，再用这个注解来结束该循环
+    //利用注解标志一个循环，再用这个注解来结束该循环,这样return的就是这个循环，而不是整个visitArray方法
     args.forEach loop@{
-        if(it == ""){
+        if (it == "") {
             return@loop
         }
         println(it)
@@ -74,7 +78,7 @@ fun visitArray(args: Array<String>) {
     println("这句话能打印输出")
     //
     args.forEach {
-        if(it == ""){
+        if (it == "") {
             return
         }
         println(it)

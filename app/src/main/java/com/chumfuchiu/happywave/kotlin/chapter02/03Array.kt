@@ -1,10 +1,11 @@
 package com.chumfuchiu.happywave.kotlin.chapter02
 
 /**
+ * 【kotlin中的数组】
  * 数组：
- * 1.kotlin中的数组通过 arrayOf 进行进行创建，arrayOf支持泛型
- * 2.八大基本数据类型也有自己的数组创建方式 xxxArrayOf
- * 3.for循环遍历方式与Java有略微不同
+ * 1.kotlin中的数组通过 arrayOf 进行创建，arrayOf支持泛型，即通过arrayOf可以构建任意数组
+ * 2.八大基本数据类型也有自己的数组创建方式 ，即xxxArrayOf
+ * 3.for循环遍历方式与Java有略微不同,支持常规的in遍历方式&lambda表达式写法
  * 4.kotlin同样支持用[]随机访问
  */
 val strArr: Array<String> = arrayOf("北京","中关村","爱奇艺创新大厦")
@@ -19,6 +20,10 @@ fun main(args: Array<String>) {
     //循环输出结果：北京中关村爱奇艺创新大厦
     for(str in strArr){
         print(str)
+    }
+    println()
+    strArr.forEach {
+        print(it)
     }
 
     println()

@@ -1,8 +1,9 @@
 package com.chumfuchiu.happywave.kotlin.chapter04
 
 /**
+ * 【kotlin中的函数】
  * kotlin中函数的写法
- *  1.复杂函数写法,无返回值时可省略
+ *  1.复杂函数写法,无返回值时可省略：
  *  fun 函数名(参数列表):返回值{
  *      //函数体
  *  }

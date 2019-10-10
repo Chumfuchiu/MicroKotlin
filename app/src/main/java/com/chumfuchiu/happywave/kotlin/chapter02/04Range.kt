@@ -1,7 +1,8 @@
 package com.chumfuchiu.happywave.kotlin.chapter02
 
 /**
- * 数学概念上的区间，表示一个范围。
+ * 【kotlin区间】
+ * 数学概念上的区间，表示一个范围，在Java中没有区间的概念
  * kotlin默认支持四个整形区间Byte Short Int Long,所有区间都是ClosedRange的子类
  * ClosedRange是Compare的子接口；
  *

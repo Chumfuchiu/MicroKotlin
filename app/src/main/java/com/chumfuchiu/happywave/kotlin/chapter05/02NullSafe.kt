@@ -1,4 +1,4 @@
-package com.chumfuchiu.happywave.kotlin.chapter03
+package com.chumfuchiu.happywave.kotlin.chapter05
 
 /**
  * 1.kotlin与Java对比，空类型安全说kotlin的优势之一

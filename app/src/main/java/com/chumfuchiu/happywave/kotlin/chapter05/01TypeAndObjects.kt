@@ -1,4 +1,4 @@
-package com.chumfuchiu.happywave.kotlin.chapter03
+package com.chumfuchiu.happywave.kotlin.chapter05
 
 /**
  * 1.Any类在kotlin的地位就和Object类在Java中的地位一样，是所有类的基类
@@ -13,17 +13,17 @@ package com.chumfuchiu.happywave.kotlin.chapter03
  * 9.kotlin支持成员变量的延迟初始化从而减小第内存的占用
  */
 
-//定义一个类,类体可以省略
+//2.定义一个类,类体可以省略
 class Person
 
-//定义一个类,类名后使用constructor定义主构造器；如果形参被var/val 修饰，那么这个形参会被认为是属性,否则不是属性；
+//3.定义一个类,类名后使用constructor定义主构造器；如果形参被var/val 修饰，那么这个形参会被认为是属性,否则不是属性；
 //例如在下面的构造方法中除了id，其他的都是类的属性
 //类的内部也是可以定义属性的
 class Developer constructor(
     var name: String, var hometown: String, var profession: String,
     id: Int
 ) {
-    //构造函数方法体
+    //4.构造函数方法体
     init {
         println("我叫${name},来自${hometown},我的岗位是${profession},我的ID是${id}")
     }
@@ -64,7 +64,7 @@ open class Student(open var name: String, open var age: Int) {
     }
 }
 
-//定义具有一个子类
+//5.定义具有一个子类
 class SeniorHighSchoolStudent(override var name: String, override var age: Int) :
     Student(name, age) {
     init {
