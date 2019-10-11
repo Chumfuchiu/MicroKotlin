@@ -1,6 +1,7 @@
 package com.chumfuchiu.happywave.kotlin.chapter05
 
 /**
+ * 【kotlin中的智能类型转换】
  * 在Java中，结合Java的多态性质，若存在形如
  * Object obj = new Integer() 的情况时，想要调用Integer对象的方法，必须要进行强制类型转换:
  * Integer i = (Integer) obj;
@@ -16,20 +17,19 @@ package com.chumfuchiu.happywave.kotlin.chapter05
  */
 fun main() {
     //str是一个可空的任意类型，这里将一个String对象作为其实例
-    var str:Any? = String(charArrayOf('H','e','l','l','o'))
+    var str:Any? = String(charArrayOf('1','2','3','4','5'))
 
-    if(str != null){
-        println(str.toString())//
-    }
+    println(str?.toString())//输出12345
 
     if(str is String){
-        println(str.toString())//不需要像Java一样 需要做类似于(String)str的强制转换
+        println(str.toString())//不需要像Java一样,在使用操作符判断数据类型后还需要做类似于(String)str的强制转换
     }
 
 
-    var i1:Int? = str as Int //转换失败抛出异常
-    var i2:Int? = str as? Int//转换失败则return null，因此i2必须是 Int？，而不是Int
-
-
+    var i1:Int? = str as Int
+    //转换失败抛出异常，java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+    var i2:Int? = str as? Int
+    println(i2)
+    //转换失败不会抛出异常，而是return null，因此i2的数据类型必须是可空数据类型Int？，而不是Int
 
 }

@@ -1,6 +1,7 @@
 package com.chumfuchiu.happywave.kotlin.chapter05
 
 /**
+ * 【kotlin的空安全】
  * 1.kotlin与Java对比，空类型安全说kotlin的优势之一
  * 在下面定义的两个方法中：
  *   getNonnullString返回的数据是一定不为null的，如果尝试return一个null值，编译器会报错
@@ -15,12 +16,12 @@ package com.chumfuchiu.happywave.kotlin.chapter05
  * */
 
 
-//不允许返回null值，尝试返回null值编译器会报错，该方法返回的对象一定是不为null的
+//该方法不允许返回null值，如果尝试返回null值编译器会报错，该方法返回的对象一定是不为null的
 fun getNonnullString(): String {
     return "str"
 }
 
-//允许返回null值，因此才操作该方法返回的对象时
+//该允许返回null值，因此才操作该方法返回的对象时，需要使用 ?. 和 !!.操作符
 fun getNullableString(): String? {
 
     return "12323232313123113123"
