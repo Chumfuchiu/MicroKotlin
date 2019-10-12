@@ -8,8 +8,8 @@ package com.chumfuchiu.happywave.kotlin.chapter05
  *   可以省略
  * 4.init块是构造函数的方法体，在一个类被实例化时会被调用，我们可以在这里调用一些初始化方法；
  *   如果有多个init块，按顺序调用
- * 5.kotlin中的继承关系用“ ：”，被继承的类与Java一样必须是非final的。如果将一个类变成非final的，
- *   在kotlin需要open关键字修饰
+ * 5.kotlin中的继承关系用“ ：”，被继承的类与Java一样必须是非final的。kotlin中默认类都是final的，如果将一个类变
+ *   成非final的，在kotlin需要open关键字修饰
  * 6.当一个类被实例化时，它的init块会被调用，同时其父类的init块也会被调用
  * 7.判断一个对象的类型，使用 is 关键字
  * 8.kotlin中任意类型都有可空和不可空两种类型，区别在于类型后是否有一个" ？"

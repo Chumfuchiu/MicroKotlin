@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
     println(aString)
     println(bString)
     //1.
-    println( aString == bString)//true,这里的 == 相当于Java的String.equal方法，比较字符串的内容
+    println( aString == bString)//true,这里的 == 相当于Java的equal方法
     println( aString === bString)//false，这里的 === 相当于Java的 ==，比较的是两个对象的内存地址
     //2.
     println("hello \"kotlin \"")//输出： hello "kotlin"
